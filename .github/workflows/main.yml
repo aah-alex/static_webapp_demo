@@ -28,7 +28,7 @@ jobs:
           ###### Repository/Build Configurations ######
           output_location: "dist" # Built app content directory, relative to app_location - optional
           skip_app_build: true
-          kip_api_build: true
+          skip_api_build: true
           production_branch: "main"
           ###### End of Repository/Build Configurations ######
 

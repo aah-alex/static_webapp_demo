@@ -17,6 +17,8 @@ jobs:
       url: ${{ steps.builddeploy.outputs.static_web_app_url }}
     runs-on: ubuntu-latest
     name: Build and Deploy Job
+    env:
+      GH_TOKEN: ${{ github.token }} # needed for gh cli
     steps:
       - name: Create Environment
         id: createEnv

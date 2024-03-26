@@ -18,6 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
+      - name: Create Environment
+        id: createEnv
+        run: gh api -X PUT /repos/${{ github.repository }}/environments/${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
       - uses: actions/checkout@v4
         with:
           submodules: true
